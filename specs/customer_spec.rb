@@ -17,4 +17,8 @@ class TestCustomer < Minitest::Test
     assert_equal(20, @customer.wallet)
   end
 
+  def test_customer_has_enough_money
+    assert(@customer.wallet >= 5)
+  end
+
 end

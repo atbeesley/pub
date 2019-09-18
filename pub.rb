@@ -17,6 +17,9 @@ def number_of_drinks
   return @drinks.count()
 end
 
+def get_drink(drink)
+  return @drinks.delete(drink)
+end
 
 
 end
