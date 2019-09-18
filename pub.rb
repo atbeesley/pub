@@ -7,4 +7,7 @@ def initialize(name, customers)
 @customers = customers
 end
 
+
+
+
 end
