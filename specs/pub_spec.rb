@@ -8,11 +8,11 @@ class TestPub < Minitest::Test
 
   def setup
     @pub = Pub.new("The Rubber Duck", [@customer1, @customer2, @customer3], 100, [@drink1, @drink2, @drink3])
-    @drink1 = Drink.new("Vodka", 5)
-    @drink2 = Drink.new("Beer", 5)
-    @drink3 = Drink.new("Cider", 5)
-    @customer1 = Customer.new("Ringo", 20, 16)
-    @customer2 = Customer.new("Paul", 30, 18)
+    @drink1 = Drink.new("Vodka", 5, 37)
+    @drink2 = Drink.new("Beer", 5, 5)
+    @drink3 = Drink.new("Cider", 5, 8)
+    @customer1 = Customer.new("Ringo", 20, 16, 0)
+    @customer2 = Customer.new("Paul", 30, 18, 0)
     # @customer3 = Customer.new("Mick Jagger")
   end
 
@@ -35,6 +35,12 @@ class TestPub < Minitest::Test
     assert_equal(15, @customer1.wallet)
     assert_equal(95, @pub.till_check)
   end
+
+  def test_drunkenness
+    @customer1.buy_drink(@drink1)
+    assert_equal(37, @customer1.drunkenness)
+  end
+
 
   def test_is_customer_18__NOPE
     @customer1.check_age(@customer1)
