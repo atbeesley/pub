@@ -1,10 +1,11 @@
 class Drink
 
-  attr_accessor(:name, :price)
+  attr_accessor(:name, :price, :strength)
 
-  def initialize(name, price)
+  def initialize(name, price, strength)
     @name = name
     @price = price
+    @strength = strength
   end
 
 end

@@ -22,6 +22,10 @@ class TestCustomer < Minitest::Test
     assert(@customer.wallet >= 5)
   end
 
+  def test_customer_drunkenness
+    assert_equal(>= 0, @customer.drunkenness)
+  end 
+
   # def test_customer_has_bought_drink
   #   buy_drink(@drink1)
   #   assert_equal(15, @customer.wallet)

@@ -36,7 +36,7 @@ class TestPub < Minitest::Test
     assert_equal(95, @pub.till_check)
   end
 
-  def test_is_customer_18__NOPE!
+  def test_is_customer_18__NOPE
     @customer1.check_age(@customer1)
     assert_equal(false, @customer1.check_age(@customer1))
   end
@@ -45,7 +45,7 @@ class TestPub < Minitest::Test
     @customer2.check_age(@customer2)
     assert_equal(true, @customer2.check_age(@customer2))
   end
-  
+
 
 
 end
