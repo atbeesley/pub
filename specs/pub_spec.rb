@@ -11,8 +11,8 @@ class TestPub < Minitest::Test
     @drink1 = Drink.new("Vodka", 5)
     @drink2 = Drink.new("Beer", 5)
     @drink3 = Drink.new("Cider", 5)
-    @customer1 = Customer.new("Ringo", 20)
-    # @customer2 = Customer.new("Paul")
+    @customer1 = Customer.new("Ringo", 20, 16)
+    @customer2 = Customer.new("Paul", 30, 18)
     # @customer3 = Customer.new("Mick Jagger")
   end
 
@@ -36,7 +36,16 @@ class TestPub < Minitest::Test
     assert_equal(95, @pub.till_check)
   end
 
+  def test_is_customer_18__NOPE!
+    @customer1.check_age(@customer1)
+    assert_equal(false, @customer1.check_age(@customer1))
+  end
 
+  def test_is_customer_18__OK
+    @customer2.check_age(@customer2)
+    assert_equal(true, @customer2.check_age(@customer2))
+  end
+  
 
 
 end
