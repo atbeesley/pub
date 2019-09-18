@@ -11,7 +11,6 @@ class TestCustomer < Minitest::Test
 
   def test_customer_name
     assert_equal("Mick Jagger", @customer.name)
-
   end
 
 end
