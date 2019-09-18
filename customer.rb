@@ -7,6 +7,10 @@ attr_accessor(:name, :wallet)
     @wallet = wallet
   end
 
+def buy_drink(drink)
+  @wallet -= drink.price
+end
+
 
 
 end
