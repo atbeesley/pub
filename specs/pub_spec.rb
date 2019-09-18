@@ -17,5 +17,9 @@ class TestPub < Minitest::Test
 
   end
 
+  def test_pub_till
+    assert_equal(100, @pub.till_check)
+  end
+
 
 end
